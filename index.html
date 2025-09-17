@@ -11,35 +11,44 @@
     
   </head>
   <body>
-    <div>
-      <h1> Contact Us </h1>
-      <div>
-        <label for="">First Name *</label>
-        <input type="text">
-        <label for="">Last Name *</label>
-        <input type="text">
+    <main class="flex min-h-screen justify-center items-center font-karla text-[16px] text-gray-700 max-w-[1000px] mx-auto">
+      <div class="grid gap-5">
+        <h1 class="text-3xl font-bold text-gray-900"> Contact Us </h1>
+        <div class="flex gap-4">
+          <div class="grid">
+            <label for="">First Name *</label>
+            <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+          </div>
+          <div class="grid">
+            <label for="">Last Name *</label>
+            <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+          </div>
+        </div>
+        <div class="grid">
+          <label for="">Email Address *</label>
+          <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+        </div>
+        <div>
+          <label for="">Query Type *</label>
+          <div class="flex gap-4">
+            <input type="text" placeholder="General Enquiry" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+            <input type="text" placeholder="Support Request" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+          </div>
+        </div>
+        <div class="grid">
+          <label for="">Message *</label>
+          <textarea name="" id="" class="border-1 border-gray-800 rounded-md px-5 p-10 mt-2"></textarea>
+        </div>
+        <div class="flex gap-5">
+          <input type="checkbox" name="" id="">
+          <p>I consent to being contacted by the team *</p>
+        </div>
+        <button class="bg-emerald-800/90 text-white rounded-md py-2 font-bold cursor-pointer">Submit</button>
       </div>
-      <div>
-        <label for="">Email Address *</label>
-        <input type="text">
-      </div>
-      <div>
-        <label for="">Query Type *</label>
-        <input type="text" placeholder="General Enquiry">
-        <input type="text" placeholder="Support Request">
-      </div>
-      <div>
-        <label for="">Message *</label>
-        <textarea name="" id=""></textarea>
-      </div>
-      <div>
-        <p>I consent to being contacted by the team *</p>
-      </div>
-      <button>Submit</button>
-    </div>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    </main>
+    <footer class="text-[12px] text-gray-700 text-center">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
       Coded by Aswani K A.
-    </div>
+    </footer>
   </body>
 </html>
