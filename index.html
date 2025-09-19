@@ -17,33 +17,51 @@
         <div class="flex gap-4">
           <div class="grid">
             <label for="">First Name *</label>
-            <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+            <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2 focus:border-teal-800 outline-none">
+            <p class="text-red-500 mt-1 hidden">This field is required</p>
           </div>
           <div class="grid">
             <label for="">Last Name *</label>
-            <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+            <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2 focus:border-teal-800 outline-none">
+            <p class="text-red-500 mt-1 hidden">This field is required</p>
           </div>
         </div>
         <div class="grid">
           <label for="">Email Address *</label>
-          <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
+          <input type="text" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2 focus:border-teal-800 outline-none">
+          <p class="text-red-500 mt-1 hidden">Please enter a valid email address</p>
         </div>
         <div>
-          <label for="">Query Type *</label>
-          <div class="flex gap-4">
-            <input type="text" placeholder="General Enquiry" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
-            <input type="text" placeholder="Support Request" class="border-1 border-gray-800 pr-30 px-5 py-2 rounded-md mt-2">
-          </div>
+          <label for="">Query Type *
+            <div class="grid grid-cols-2 gap-4">
+              <label class="flex items-center gap-2 border-1 border-gray-800 px-5 py-2 rounded-md mt-2 cursor-pointer pr-30 focus-within:border-teal-800 focus-within:bg-teal-100/60 outline-none">
+                <input type="radio" name="querytype" class="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:border-emerald-800/90 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:rounded-full checked:after:bg-emerald-800/90 checked:after:mx-auto checked:after:my-auto">
+                <span>General Enquiry</span>
+              </label>
+              <label class="flex items-center gap-2 border-1 border-gray-800 px-5 py-2 rounded-md mt-2 cursor-pointer pr-30 focus-within:border-teal-800 focus-within:bg-teal-100/60 outline-none">
+                <input type="radio" name="querytype" class="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:border-emerald-800/90 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:rounded-full checked:after:bg-emerald-800/90 checked:after:mx-auto checked:after:my-auto">
+                <span>Support Request</span>
+              </label>
+              <p class="text-red-500 mt-1 hidden">Please select a query type</p>
+            </div>
+          </label>
         </div>
         <div class="grid">
           <label for="">Message *</label>
-          <textarea name="" id="" class="border-1 border-gray-800 rounded-md px-5 p-10 mt-2"></textarea>
+          <textarea name="" id="" class="border-1 border-gray-800 rounded-md px-5 p-10 mt-2 focus:border-teal-800 outline-none"></textarea>
+          <p class="text-red-500 mt-1 hidden">This field is required</p>
         </div>
-        <div class="flex gap-5">
-          <input type="checkbox" name="" id="">
-          <p>I consent to being contacted by the team *</p>
+        <div>
+          <div class="flex items-center gap-2">
+            <input type="checkbox" id="consent" class="appearance-none w-5 h-5 border border-gray-400 rounded
+                     checked:bg-emerald-800/90 checked:border-emerald-800/90 checked:after:content-['✔']
+                     checked:after:text-white checked:after:block checked:after:text-center checked:after:leading-5">
+            <label for="consent">I consent to being contacted by the team *</label>
+          </div>
+          <p class="text-red-500 mt-1 hidden">To submit this form, please consent to being contacted</p>
         </div>
-        <button class="bg-emerald-800/90 text-white rounded-md py-2 font-bold cursor-pointer">Submit</button>
+        
+        <button class="bg-emerald-800/90 text-white rounded-md py-2 font-bold cursor-pointer hover:bg-emerald-900">Submit</button>
       </div>
     </main>
     <footer class="text-[12px] text-gray-700 text-center">
