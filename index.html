@@ -12,25 +12,25 @@
   </head>
   <body>
     <main class="grid sm:flex min-h-screen sm:justify-center sm:items-center p-12 font-karla text-[16px] text-gray-700 sm:max-w-[1000px] min-w-[400px] mx-auto">
-      <form id="form-submit">
-        <div class="grid gap-5">
+      <form id="form-submit" novalidate>
+        <div class="grid gap-3">
           <h1 class="text-3xl font-bold text-gray-900 mb-4"> Contact Us </h1>
           <div class="sm:flex sm:gap-4">
             <div class="grid">
               <label for="">First Name *</label>
               <input type="text" id="fname" class="border-1 border-gray-800 sm:pr-30 px-5 py-2 rounded-md mt-2 focus:border-teal-800 outline-none">
-              <p id="fpara" class="text-red-500 mt-1 hidden">This field is required</p>
+              <p id="fpara" class="text-[14px] text-red-500 mt-1 hidden">This field is required</p>
             </div>
             <div class="grid">
               <label for="">Last Name *</label>
               <input type="text" id="lname" class="border-1 border-gray-800 sm:pr-30 px-5 py-2 rounded-md mt-2 focus:border-teal-800 outline-none">
-              <p id="lpara" class="text-red-500 mt-1 hidden">This field is required</p>
+              <p id="lpara" class="text-[14px] text-red-500 mt-1 hidden">This field is required</p>
             </div>
           </div>
           <div class="grid">
             <label for="">Email Address *</label>
             <input type="text" id="email" class="border-1 border-gray-800 sm:pr-30 px-5 py-2 rounded-md mt-2 focus:border-teal-800 outline-none">
-            <p id="epara" class="text-red-500 mt-1 hidden">Please enter a valid email address</p>
+            <p id="epara" class="text-[14px] text-red-500 mt-1 hidden">Please enter a valid email address</p>
           </div>
           <div>
             <label for="">Query Type *
@@ -43,14 +43,14 @@
                   <input type="radio" id="" name="querytype" class="appearance-none w-4 h-4 rounded-full border-1 border-gray-400 checked:border-emerald-800/90 checked:after:content-[''] checked:after:block checked:after:w-3 checked:after:h-3 checked:after:rounded-full checked:after:bg-emerald-800/90 checked:after:mx-auto checked:after:my-auto">
                   <span>Support Request</span>
                 </label>
-                <p id="radioPara" class="text-red-500 mt-1 hidden">Please select a query type</p>
+                <p id="radioPara" class="text-[14px] text-red-500 hidden">Please select a query type</p>
               </div>
             </label>
           </div>
           <div class="grid">
             <label for="">Message *</label>
             <textarea name="" id="msg" class="border-1 border-gray-800 rounded-md sm:px-5 sm:p-10 p-15 mt-2 focus:border-teal-800 outline-none"></textarea>
-            <p id="msgPara" class="text-red-500 mt-1 hidden">This field is required</p>
+            <p id="msgPara" class="text-[14px] text-red-500 mt-1 hidden">This field is required</p>
           </div>
           <div>
             <div class="flex items-center gap-2">
@@ -59,7 +59,7 @@
                        checked:after:text-white checked:after:block checked:after:text-center checked:after:leading-5">
               <label for="consent">I consent to being contacted by the team *</label>
             </div>
-            <p id="consentPara" class="text-red-500 mt-1 hidden">To submit this form, please consent to being contacted</p>
+            <p id="consentPara" class="text-[14px] text-red-500 mt-1 hidden">To submit this form, please consent to being contacted</p>
           </div>
         
           <button id="submit-btn" class="bg-emerald-800/90 text-white rounded-md py-2 font-bold cursor-pointer hover:bg-emerald-900">Submit</button>
