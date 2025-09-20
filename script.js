@@ -59,5 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
             queryPara.classList.add("hidden")
         }
 
+        //checkbox
+        
+        if(!userConsent.checked) {
+            e.preventDefault()
+            consentPara.classList.remove("hidden")
+        }
+        else {
+            consentPara.classList.add("hidden")
+        }
     })
 })
