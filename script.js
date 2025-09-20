@@ -40,5 +40,24 @@ document.addEventListener("DOMContentLoaded", () => {
             message.classList.remove("border-red-500")
             messagePara.classList.add("hidden")
         }
+
+        //radio button
+
+        const radiobtn = document.querySelectorAll('input[name = "querytype"]')
+        let selected = false
+
+        radiobtn.forEach(radio => {
+            if(radio.checked) {
+                selected = true
+            }
+        })
+        if(!selected) {
+            e.preventDefault()
+            queryPara.classList.remove("hidden")
+        }
+        else {
+            queryPara.classList.add("hidden")
+        }
+
     })
 })
