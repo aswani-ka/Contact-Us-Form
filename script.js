@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const submitButton =  document.getElementById("submit-btn")
     const formSubmit =  document.getElementById("form-submit")
 
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     formSubmit.addEventListener("submit", (e) => {
         e.preventDefault()
         
@@ -39,6 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
         else {
             message.classList.remove("border-red-500")
             messagePara.classList.add("hidden")
+        }
+
+        if(!emailPattern.test(userEmail.value.trim()) || userEmail.value.trim() === "") {
+            userEmail.classList.add("border-red-500")
+            userEmail.classList.add("text-red-500")
+            userEmailPara.classList.remove("hidden")
+        }
+        else {
+            userEmail.classList.remove("border-red-500")
+            userEmailPara.classList.add("hidden")
         }
 
         //radio button
