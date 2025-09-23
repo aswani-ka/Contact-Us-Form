@@ -83,5 +83,39 @@ document.addEventListener("DOMContentLoaded", () => {
         else {
             consentPara.classList.add("hidden")
         } */
+
+        // Attach live validation for text, email, and textarea fields
+
+        fields.forEach(({ input, error, validate }) => {
+        if (!(input instanceof NodeList)) {
+            input.addEventListener("input", () => {
+                if (validate(input.value)) {
+                        input.classList.remove("border-red-500");
+                        error.classList.add("hidden");
+                    }
+                });
+            }
+        });
+
+        // Radio group: listen for change
+
+        const radioGroup = document.querySelectorAll('input[name = "querytype"]')
+        radioGroup.forEach((radio) => {
+            radio.addEventListener("change", () => {
+                if(
+                    Array.from(radioGroup).some((r) => r.checked)
+                ){
+                    queryPara.classList.add("hidden")
+                }
+            })
+        })
+
+        // Checkbox: listen for change
+
+        userConsent.addEventListener("change", () => {
+            if(userConsent.checked) {
+                consentPara.classList.add("hidden")
+            }
+        })
     })
 })
