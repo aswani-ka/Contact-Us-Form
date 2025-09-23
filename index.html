@@ -14,6 +14,13 @@
     <main class="grid sm:flex min-h-screen sm:justify-center sm:items-center p-12 font-karla text-[16px] text-gray-700 sm:max-w-[1000px] min-w-[400px] mx-auto">
       <form id="form-submit" novalidate>
         <div class="grid gap-3">
+          <div id="successMessage" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-emerald-950/90 text-white px-5 py-4 rounded-xl shadow-lg hidden" role="status" aria-live="polite">
+            <div class="flex gap-4 mb-3">
+              <img src="/assets/images/icon-success-check.svg" alt="">
+              <p>Message Sent!</p>
+            </div>
+            <p class="text-[14px]">Thanks for completing the form. We’ll be in touch soon!</p>
+          </div>
           <h1 class="text-3xl font-bold text-gray-900 mb-4"> Contact Us </h1>
           <div class="sm:flex sm:gap-4">
             <div class="grid">
@@ -49,7 +56,7 @@
           </div>
           <div class="grid">
             <label for="">Message *</label>
-            <textarea name="" id="msg" data-error="msgPara" class="border-1 border-gray-800 rounded-md sm:px-5 sm:p-10 p-15 mt-2 focus:border-teal-800 outline-none"></textarea>
+            <textarea name="" id="msg" data-error="msgPara" class="border-1 border-gray-800 rounded-md px-5 py-2 sm:pb-18 pb-28 focus:border-teal-800 outline-none"></textarea>
             <p id="msgPara" class="text-[14px] text-red-500 mt-1 hidden">This field is required</p>
           </div>
           <div>
@@ -62,7 +69,7 @@
             <p id="consentPara" class="text-[14px] text-red-500 mt-1 hidden">To submit this form, please consent to being contacted</p>
           </div>
         
-          <button id="submit-btn" class="bg-emerald-800/90 text-white rounded-md py-2 font-bold cursor-pointer hover:bg-emerald-900">Submit</button>
+          <button id="submit-btn" class="bg-emerald-700/90 text-white rounded-md py-2 font-bold cursor-pointer hover:bg-emerald-900">Submit</button>
         </div>
       </form>
     </main>
