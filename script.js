@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const messagePara =  document.getElementById("msgPara")
     const userConsent =  document.getElementById("consent")
     const consentPara =  document.getElementById("consentPara")
+    const successMsg =  document.getElementById("successMessage")
     const submitButton =  document.getElementById("submit-btn")
     const formSubmit =  document.getElementById("form-submit")
 
@@ -39,9 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         ]
 
+        let allValid = true
+
         fields.forEach(({ input, error, validate }) => {
             let value = input instanceof NodeList ? null : input.value
             if (!validate(value)) {
+                allValid = false
                 if (!(input instanceof NodeList)) {
                     input.classList.add("border-red-500")
                 }
@@ -117,5 +121,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 consentPara.classList.add("hidden")
             }
         })
+
+        if (!allValid) return
+
+        // If everything is valid, show success message
+     
+        successMsg.classList.remove("hidden")
+        // Reset form
+        formSubmit.reset()
+
+        // Hide after 3 seconds
+        setTimeout(() => {
+            successMsg.classList.add("hidden")
+        }, 3000)
     })
 })
