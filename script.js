@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lastNamePara =  document.getElementById("lpara")
     const userEmail =  document.getElementById("email")
     const userEmailPara =  document.getElementById("epara")
-    const queryPara =  document.getElementById("radioPara")
+    const queryPara =  document.getElementById("querytypePara")
     const message =  document.getElementById("msg")
     const messagePara =  document.getElementById("msgPara")
     const userConsent =  document.getElementById("consent")
@@ -13,49 +13,52 @@ document.addEventListener("DOMContentLoaded", () => {
     const submitButton =  document.getElementById("submit-btn")
     const formSubmit =  document.getElementById("form-submit")
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     formSubmit.addEventListener("submit", (e) => {
         e.preventDefault()
-        
-        if(firstName.value.trim() === "") {
-            firstName.classList.add("border-red-500")
-            firstnamePara.classList.remove("hidden")
-        }
-        else {
-            firstName.classList.remove("border-red-500")
-            firstnamePara.classList.add("hidden")
-        }
-        if(lastName.value.trim() === "") {
-            lastName.classList.add("border-red-500")
-            lastNamePara.classList.remove("hidden")
-        }
-        else {
-            lastName.classList.remove("border-red-500")
-            lastNamePara.classList.add("hidden")
-        }
-        if(message.value.trim() === "") {
-            message.classList.add("border-red-500")
-            messagePara.classList.remove("hidden")
-        }
-        else {
-            message.classList.remove("border-red-500")
-            messagePara.classList.add("hidden")
-        }
 
-        if(!emailPattern.test(userEmail.value.trim()) || userEmail.value.trim() === "") {
-            userEmail.classList.add("border-red-500")
-            userEmail.classList.add("text-red-500")
-            userEmailPara.classList.remove("hidden")
-        }
-        else {
-            userEmail.classList.remove("border-red-500")
-            userEmailPara.classList.add("hidden")
-        }
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        const fields = [
+            { input: firstName, error: firstnamePara, validate: (v) => v.trim() !== "" },
+            { input: lastName, error: lastNamePara, validate: (v) => v.trim() !== "" },
+            { input: message, error: messagePara, validate: (v) => v.trim() !== "" },
+            { input: userEmail, error: userEmailPara, validate: (v) => emailPattern.test(v.trim())},
+            {
+                // Radio group
+                input: document.querySelectorAll('input[name = "querytype"]'),
+                error: queryPara,
+                validate: () =>
+                Array.from(document.querySelectorAll('input[name = "querytype"]')).some(
+                (r) => r.checked
+                ),
+            },
+            {
+                // Checkbox
+                input: userConsent,
+                error: consentPara,
+                validate: () => userConsent.checked,
+            },
+        ]
 
-        //radio button
+        fields.forEach(({ input, error, validate }) => {
+            let value = input instanceof NodeList ? null : input.value
+            if (!validate(value)) {
+                if (!(input instanceof NodeList)) {
+                    input.classList.add("border-red-500")
+                }
+                error.classList.remove("hidden")
+            } 
+            else {
+                if (!(input instanceof NodeList)) {
+                    input.classList.remove("border-red-500")
+                }
+                error.classList.add("hidden")
+            }
+        })
 
-        const radiobtn = document.querySelectorAll('input[name = "querytype"]')
+
+        //radio group
+
+        /* const radiobtn = document.querySelectorAll('input[name = "querytype"]')
         let selected = false
 
         radiobtn.forEach(radio => {
@@ -69,16 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         else {
             queryPara.classList.add("hidden")
-        }
+        } */
 
         //checkbox
         
-        if(!userConsent.checked) {
+        /* if(!userConsent.checked) {
             e.preventDefault()
             consentPara.classList.remove("hidden")
         }
         else {
             consentPara.classList.add("hidden")
-        }
+        } */
     })
 })
